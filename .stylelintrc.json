@@ -18,6 +18,7 @@
       {
         "empty-line-between-groups": false
       }
-    ]
+    ],
+    "no-empty-source": null
   }
 }
