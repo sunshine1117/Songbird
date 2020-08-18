@@ -1,0 +1,30 @@
+.header {
+  padding-top: 2rem;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__logo {
+    width: 20rem;
+    height: 7rem;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__score {
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  &__bottom {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Game.scss';
+
 import Header from './components/Header/Header';
 import Question from './components/Question/Question';
 
@@ -14,7 +16,7 @@ class Game extends Component {
     this.state = {
       data: [],
       isAnswer: false,
-      activeCategory: null,
+      activeCategory: 'warm-up',
       randomQuestion: {},
       isVariantSelected: false,
       selectedVariantId: 1 || null,

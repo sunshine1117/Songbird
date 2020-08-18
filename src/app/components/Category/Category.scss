@@ -1,0 +1,31 @@
+.category {
+  display: flex;
+
+  &__item {
+    flex: auto;
+    text-align: center;
+    background-color: #028363;
+    pointer-events: none;
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &.active {
+      background-color: #00bc8c;
+      pointer-events: inherit;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 1rem 1.4rem;
+    color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+}

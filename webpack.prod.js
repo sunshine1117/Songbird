@@ -5,7 +5,6 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-
 module.exports = merge(common, {
   mode: 'production',
   output: {
@@ -19,7 +18,6 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { importLoaders: 1 },
           },
           {
             loader: 'postcss-loader',
@@ -30,11 +28,6 @@ module.exports = merge(common, {
           },
           {
             loader: 'sass-loader',
-            options: {
-              sassOptions: {
-                outputStyle: 'compressed',
-              },
-            },
           },
         ],
       },

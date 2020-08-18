@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/src/styles.scss';
 
 import './Question';
 

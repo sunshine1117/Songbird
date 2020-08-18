@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Button';
+import './Button.scss';
 
 const Button = ({ isAnswer, btnText }) => {
   return <button className="button button--green">{btnText}</button>;

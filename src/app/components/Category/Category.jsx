@@ -2,16 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import dataCategory from '../../data/game-categories';
 
-import './Category';
+import './Category.scss';
 
 const Category = ({ activeCategory }) => {
   const categoryItems = dataCategory.map((category) => (
     <li
-      className="category__item"
+      className={
+        category.category === activeCategory
+          ? 'category__item active'
+          : 'category__item'
+      }
       key={category.id}
       data-category={category.category}
     >
-      {category.name}
+      <a href="#" className="category__link">
+        {category.name}
+      </a>
     </li>
   ));
   return <ul className="category">{categoryItems}</ul>;

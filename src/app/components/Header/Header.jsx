@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Category from '../Category/Category';
 
-import './Header';
+import './Header.scss';
 
 const Header = ({ isAnswer, activeCategory }) => {
   return (
@@ -14,6 +14,7 @@ const Header = ({ isAnswer, activeCategory }) => {
           </svg>
         </div>
         <div className="header__score">
+          Score: &nbsp;
           <span className="score">{0}</span>
         </div>
       </div>

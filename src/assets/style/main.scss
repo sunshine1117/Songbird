@@ -1,1 +1,23 @@
+@import 'react-h5-audio-player/src/styles.scss';
 @import './fonts';
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
