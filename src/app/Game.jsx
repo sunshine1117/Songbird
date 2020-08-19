@@ -15,7 +15,7 @@ class Game extends Component {
 
     this.state = {
       data: [],
-      isAnswer: false,
+      isAnswer: true,
       activeCategory: 'warm-up',
       randomQuestion: {},
       isVariantSelected: false,
@@ -52,7 +52,7 @@ class Game extends Component {
           </div>
           <div className="game__body">
             <div className="game__body-col">
-              <VariantList data={data} />
+              <VariantList data={data} isAnswer={isAnswer} />
             </div>
             <div className="game__body-col">
               <Details

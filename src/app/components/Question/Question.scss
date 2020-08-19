@@ -1,0 +1,159 @@
+.question {
+  padding: 2rem;
+  background-color: #303030;
+  border-radius: 5px;
+
+  &__row {
+    display: flex;
+
+    &-col {
+      &:first-child {
+        flex: 0 0 200px;
+        margin-right: 4rem;
+      }
+
+      &:last-child {
+        flex: auto;
+      }
+    }
+  }
+
+  &__img {
+    border-radius: 1rem;
+
+    &-file {
+      border-radius: 1rem;
+    }
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-size: 3.2rem;
+  }
+
+  &__audio-player {
+    position: relative;
+    padding-top: 2.4rem;
+    padding-right: 0.5rem;
+    padding-left: 6.6rem;
+  }
+
+  & .rhap_main {
+    flex-direction: row;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_container {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    & svg {
+      height: 100%;
+      width: 100%;
+      fill: #00bc8c;
+    }
+  }
+
+  & .rhap_main-controls {
+    position: absolute;
+    left: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_main-controls-button {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_stacked .rhap_controls-section {
+    margin-top: 0;
+  }
+
+  & .rhap_progress-section {
+    flex: 4 1 auto;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_progress-container {
+    order: -1;
+    margin: 0 calc(20px + 1%) 0 0;
+  }
+
+  & .rhap_progress-bar-show-download,
+  & .rhap_download-progress {
+    background-color: #555;
+  }
+
+  & .rhap_progress-indicator {
+    background-color: #555;
+    box-shadow: none;
+  }
+
+  & .rhap_progress-filled {
+    background-image: linear-gradient(to right, #00bc8c 0%, #028363 100%);
+  }
+
+  & .rhap_time {
+    color: #fff;
+    font-size: 1.5rem;
+
+    &:nth-of-type(1) {
+      position: relative;
+      margin-right: 1.2rem;
+
+      &::after {
+        content: '/';
+        position: absolute;
+        right: -0.8rem;
+        display: inline-block;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  & .rhap_volume-button {
+    margin-right: 1rem;
+    color: #555;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_volume-bar {
+    background-color: #555;
+  }
+
+  & .rhap_volume-bar-area {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .rhap_volume-indicator {
+    box-shadow: none;
+    background-color: #555;
+  }
+}

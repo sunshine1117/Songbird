@@ -1,0 +1,45 @@
+.v-list {
+  background-color: #303030;
+  border-radius: 5px;
+  border: 1px solid #555;
+
+  &__item {
+    width: 100%;
+    padding: 1.5rem;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:first-child {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 5px 5px;
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  &__check {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1.4rem;
+    border-radius: 50%;
+    background-color: #555;
+
+    &.is-wrong {
+      background-color: #d62c1a;
+    }
+
+    &.is-correct {
+      background-color: #00bc8c;
+    }
+  }
+}

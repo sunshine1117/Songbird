@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './VariantList';
+import './VariantList.scss';
 
 const VariantList = ({ isAnswer, data }) => {
+  console.log(isAnswer);
   console.log(data);
   const vListItems = data.map((dataItem) => (
-    <li className="v-list_item" key={dataItem.id}>
-      <span className="v-list__check"></span>
+    <li className="v-list__item" key={dataItem.id}>
+      <span
+        className={
+          isAnswer ? 'v-list__check is-correct' : 'v-list__check is-wrong'
+        }
+      ></span>
       {dataItem.name}
     </li>
   ));

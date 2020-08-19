@@ -5,4 +5,17 @@
     max-width: 1140px;
     margin: 0 auto;
   }
+
+  &__guestion {
+    margin-bottom: 3rem;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    &-col {
+      flex: 0 0 48.5%;
+    }
+  }
 }
