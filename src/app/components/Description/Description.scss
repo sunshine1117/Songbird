@@ -1,0 +1,75 @@
+.d-card {
+  height: 100%;
+  padding: 2rem;
+  background-color: #303030;
+  border-radius: 5px;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    min-height: 18rem;
+  }
+
+  &__image {
+    height: 15.5rem;
+    flex: 0 0 200px;
+    border-radius: 1rem;
+    margin-right: 3rem;
+
+    img {
+      display: block;
+      height: 100%;
+      border-radius: 1rem;
+    }
+  }
+
+  &__group {
+    flex: auto;
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-size: 3.2rem;
+  }
+
+  &__subtitle {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+
+  &__player {
+    position: relative;
+    padding-top: 2.4rem;
+    padding-left: 6.2rem;
+  }
+
+  & .rhap_main {
+    flex-wrap: wrap;
+  }
+
+  & .rhap_controls-section {
+    flex: 0 0 100%;
+
+    &:last-child {
+      margin-top: 1rem;
+    }
+  }
+
+  & .rhap_main-controls {
+    top: 1.4rem;
+  }
+
+  & .rhap_progress-container {
+    margin-right: calc(1rem + 1%);
+  }
+
+  &__desc {
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}

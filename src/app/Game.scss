@@ -13,9 +13,14 @@
   &__body {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3rem;
 
     &-col {
       flex: 0 0 48.5%;
     }
+  }
+
+  &__bottom {
+    padding-bottom: 3rem;
   }
 }
