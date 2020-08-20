@@ -4,6 +4,23 @@
   &__container {
     max-width: 1140px;
     margin: 0 auto;
+
+    @media only screen and (max-width: 1200px) {
+      max-width: 96rem;
+    }
+
+    @media only screen and (max-width: 992px) {
+      max-width: 72rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      max-width: 54rem;
+    }
+
+    @media only screen and (max-width: 540px) {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
   }
 
   &__guestion {
@@ -15,8 +32,20 @@
     justify-content: space-between;
     margin-bottom: 3rem;
 
+    @media only screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+
     &-col {
       flex: 0 0 48.5%;
+
+      @media only screen and (max-width: 768px) {
+        flex: 0 0 100%;
+
+        &:first-child {
+          margin-bottom: 3rem;
+        }
+      }
     }
   }
 

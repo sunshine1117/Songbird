@@ -6,14 +6,35 @@
   &__row {
     display: flex;
 
+    @media only screen and (max-width: 540px) {
+      flex-wrap: wrap;
+    }
+
     &-col {
       &:first-child {
         flex: 0 0 200px;
         margin-right: 4rem;
+
+        @media only screen and (max-width: 768px) {
+          margin-right: 2rem;
+        }
+
+        @media only screen and (max-width: 540px) {
+          display: flex;
+          flex: 0 0 100%;
+          justify-content: center;
+          margin-right: 0;
+          margin-bottom: 2rem;
+        }
       }
 
       &:last-child {
         flex: auto;
+
+        @media only screen and (max-width: 540px) {
+          flex: 0 0 100%;
+          margin-right: 0;
+        }
       }
     }
   }
@@ -28,9 +49,14 @@
 
   &__title {
     padding-bottom: 1rem;
-    border-bottom: 1px solid #555;
     color: #fff;
     font-size: 3.2rem;
+    border-bottom: 1px solid #555;
+
+    @media only screen and (max-width: 540px) {
+      font-size: 2.4rem;
+      text-align: center;
+    }
   }
 
   &__audio-player {
@@ -38,5 +64,25 @@
     padding-top: 2.4rem;
     padding-right: 0.5rem;
     padding-left: 6.6rem;
+
+    @media only screen and (max-width: 540px) {
+      padding-left: 6.2rem;
+    }
+  }
+
+  & .rhap_main {
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  & .rhap_main-controls {
+    top: 1.4rem;
+  }
+
+  & .rhap_controls-section {
+    @media screen and (max-width: 768px) {
+      flex: 0 0 100%;
+    }
   }
 }

@@ -1,6 +1,12 @@
 .category {
   display: flex;
 
+  @media only screen and (max-width: 992px) {
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
   &__item {
     flex: auto;
     text-align: center;
@@ -9,10 +15,17 @@
 
     &:first-child {
       border-radius: 5px 0 0 5px;
+
+      @media only screen and (max-width: 992px) {
+        border-radius: 5px 0 0 0;
+      }
     }
 
     &:last-child {
       border-radius: 0 5px 5px 0;
+      @media only screen and (max-width: 992px) {
+        border-radius: 0;
+      }
     }
 
     &.active {
