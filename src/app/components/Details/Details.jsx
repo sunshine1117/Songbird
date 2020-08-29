@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import AudioPlayer from 'react-h5-audio-player';
 import Icon from '../Icon/Icon';
 
-import './Description.scss';
+import './Details.scss';
 
 const Details = ({ data, isVariantSelected }) => {
-  console.log(data);
   return (
     <div className="d-card">
       {isVariantSelected ? (
@@ -23,6 +22,7 @@ const Details = ({ data, isVariantSelected }) => {
                 <AudioPlayer
                   src={data[0].audio}
                   showJumpControls={false}
+                  autoPlayAfterSrcChange={false}
                   customAdditionalControls={[]}
                   customIcons={{
                     play: <Icon iconId="play2" />,
@@ -36,10 +36,16 @@ const Details = ({ data, isVariantSelected }) => {
           <p className="d-card__desc">{data[0].description}</p>
         </div>
       ) : (
-        <p>Please choose variant</p>
+        <p>
+          Послушайте плеер.
+          <br />
+          Выберите птицу из списка
+        </p>
       )}
     </div>
   );
 };
+
+Details.propTypes = {};
 
 export default Details;

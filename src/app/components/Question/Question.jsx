@@ -13,7 +13,9 @@ const Question = ({ isAnswer, randomQuestion }) => {
         <div className="question__row-col">
           <div className="question__img">
             <img
-              src="assets/images/unvisible.jpg"
+              src={
+                isAnswer ? randomQuestion.image : 'assets/images/unvisible.jpg'
+              }
               alt="unvisible"
               className="question__img-file"
             />
@@ -21,11 +23,14 @@ const Question = ({ isAnswer, randomQuestion }) => {
         </div>
         <div className="question__row-col">
           <div className="question__content">
-            <div className="question__title">******</div>
+            <div className="question__title">
+              {isAnswer ? randomQuestion.name : '******'}
+            </div>
             <div className="question__audio-player">
               <AudioPlayer
-                src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+                src={randomQuestion.audio}
                 showJumpControls={false}
+                autoPlayAfterSrcChange={false}
                 customAdditionalControls={[]}
                 customIcons={{
                   play: <Icon iconId="play2" />,

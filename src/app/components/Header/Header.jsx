@@ -4,7 +4,7 @@ import Category from '../Category/Category';
 
 import './Header.scss';
 
-const Header = ({ isAnswer, activeCategory }) => {
+const Header = ({ isAnswer, score, activeCategory }) => {
   return (
     <header className="header">
       <div className="header__top">
@@ -15,7 +15,7 @@ const Header = ({ isAnswer, activeCategory }) => {
         </div>
         <div className="header__score">
           Score: &nbsp;
-          <span className="score">{0}</span>
+          <span className="score">{isAnswer ? score : 0}</span>
         </div>
       </div>
       <div className="header__bottom">
@@ -30,6 +30,7 @@ const Header = ({ isAnswer, activeCategory }) => {
 Header.propTypes = {
   isAnswer: PropTypes.bool,
   activeCategory: PropTypes.string,
+  score: PropTypes.number,
 };
 
 export default Header;

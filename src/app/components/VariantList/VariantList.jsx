@@ -3,25 +3,47 @@ import PropTypes from 'prop-types';
 
 import './VariantList.scss';
 
-const VariantList = ({ isAnswer, data }) => {
-  console.log(isAnswer);
-  console.log(data);
-  const vListItems = data.map((dataItem) => (
-    <li className="v-list__item" key={dataItem.id}>
-      <span
-        className={
-          isAnswer ? 'v-list__check is-correct' : 'v-list__check is-wrong'
-        }
-      ></span>
-      {dataItem.name}
-    </li>
-  ));
+const VariantList = ({
+  data,
+  isVariantSelected,
+  isAnswer,
+  onVariantSelect,
+  wrongAnswersId,
+  correctAnswersId,
+}) => {
+  const vListItems = data.map((dataItem) => {
+    console.log(correctAnswersId, wrongAnswersId);
+    const isWrong = wrongAnswersId.some((id) => id === dataItem.id)
+      ? 'is-wrong'
+      : '';
+    const isRight = correctAnswersId.some((id) => id === dataItem.id)
+      ? 'is-correct'
+      : '';
+
+    console.log(isWrong, isRight);
+    return (
+      <li
+        className="v-list__item"
+        key={dataItem.id}
+        onClick={() => {
+          onVariantSelect(dataItem.id);
+        }}
+      >
+        <span className={`v-list__check ${isWrong} ${isRight}`}></span>
+        {dataItem.name}
+      </li>
+    );
+  });
   return <ul className="v-list">{vListItems}</ul>;
 };
 
 VariantList.propTypes = {
+  isVariantSelected: PropTypes.bool,
   isAnswer: PropTypes.bool,
-  quesVariants: PropTypes.arrayOf(PropTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object),
+  onVariantSelect: PropTypes.func,
+  wrongAnswersId: PropTypes.array,
+  correctAnswersId: PropTypes.array,
 };
 
 export default VariantList;

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
@@ -103,6 +104,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'assets/audio/*', to: '' }],
+    }),
     new HtmlWebpackPlugin({ template: '../public/index.html' }),
     new MiniCssExtractPlugin({
       chunkFilename: '[id].css',
