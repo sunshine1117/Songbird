@@ -2,15 +2,16 @@ function getRandomBird(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function countScore(rightAnswers, wrongAnswers) {
-  const score = 5;
+function countScore(bool) {
+  let score = 5;
 
-  if (score < 0) return 0;
-
-  if (wrongAnswers.length === 0) {
+  if (!bool) {
+    score -= 1;
+  } else {
     return score;
   }
-  return score - 1;
+
+  return score;
 }
 
 export { getRandomBird, countScore };

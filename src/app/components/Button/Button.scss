@@ -10,9 +10,21 @@
   cursor: pointer;
   transition: background-color 0.5s;
 
+  &:focus {
+    outline: none;
+  }
+
   &--dark {
     background-color: #303030;
     pointer-events: none;
+  }
+
+  &--over {
+    padding: 2rem 1.4rem;
+
+    @media only screen and (max-width: 540px) {
+      padding: 1.6rem 1.2rem;
+    }
   }
 
   &--green {

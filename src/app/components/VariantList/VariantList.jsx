@@ -5,14 +5,11 @@ import './VariantList.scss';
 
 const VariantList = ({
   data,
-  isVariantSelected,
-  isAnswer,
   onVariantSelect,
   wrongAnswersId,
   correctAnswersId,
 }) => {
   const vListItems = data.map((dataItem) => {
-    console.log(correctAnswersId, wrongAnswersId);
     const isWrong = wrongAnswersId.some((id) => id === dataItem.id)
       ? 'is-wrong'
       : '';
@@ -20,7 +17,6 @@ const VariantList = ({
       ? 'is-correct'
       : '';
 
-    console.log(isWrong, isRight);
     return (
       <li
         className="v-list__item"
@@ -30,7 +26,7 @@ const VariantList = ({
         }}
       >
         <span className={`v-list__check ${isWrong} ${isRight}`}></span>
-        {dataItem.name}
+        <span>{dataItem.name}</span>
       </li>
     );
   });
@@ -38,8 +34,6 @@ const VariantList = ({
 };
 
 VariantList.propTypes = {
-  isVariantSelected: PropTypes.bool,
-  isAnswer: PropTypes.bool,
   data: PropTypes.arrayOf(PropTypes.object),
   onVariantSelect: PropTypes.func,
   wrongAnswersId: PropTypes.array,

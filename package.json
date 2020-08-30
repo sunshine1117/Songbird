@@ -81,12 +81,10 @@
   ],
   "lint-staged": {
     "src/app/**/*.{js, jsx}": [
-      "eslint . --fix",
-      "git add"
+      "eslint . --fix"
     ],
     "src/**/*.scss": [
-      "stylelint src/**/*.scss --syntax scss --fix",
-      "git add"
+      "stylelint src/**/*.scss --syntax scss --fix"
     ]
   },
   "husky": {

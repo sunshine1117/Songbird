@@ -15,7 +15,7 @@ const Header = ({ isAnswer, score, activeCategory }) => {
         </div>
         <div className="header__score">
           Score: &nbsp;
-          <span className="score">{isAnswer ? score : 0}</span>
+          <span className="score">{score}</span>
         </div>
       </div>
       <div className="header__bottom">

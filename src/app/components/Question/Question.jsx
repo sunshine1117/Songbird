@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import AudioPlayer from 'react-h5-audio-player';
@@ -6,7 +6,8 @@ import Icon from '../Icon/Icon';
 
 import './Question.scss';
 
-const Question = ({ isAnswer, randomQuestion }) => {
+const Question = React.forwardRef((props, ref) => {
+  const { isAnswer, randomQuestion } = props;
   return (
     <div className="question">
       <div className="question__row">
@@ -36,6 +37,7 @@ const Question = ({ isAnswer, randomQuestion }) => {
                   play: <Icon iconId="play2" />,
                   pause: <Icon iconId="pause" />,
                 }}
+                ref={ref}
               />
             </div>
           </div>
@@ -43,7 +45,7 @@ const Question = ({ isAnswer, randomQuestion }) => {
       </div>
     </div>
   );
-};
+});
 
 Question.propTypes = {
   isAnswer: PropTypes.bool,

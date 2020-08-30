@@ -105,7 +105,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin({
-      patterns: [{ from: 'assets/audio/*', to: '' }],
+      patterns: [
+        { from: 'assets/audio/*', to: '' },
+        { from: '../public/favicon.ico', to: '' },
+      ],
     }),
     new HtmlWebpackPlugin({ template: '../public/index.html' }),
     new MiniCssExtractPlugin({
@@ -113,6 +116,10 @@ module.exports = {
     }),
     new SpriteLoaderPlugin(),
   ],
+
+  node: {
+    fs: 'empty',
+  },
 
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
