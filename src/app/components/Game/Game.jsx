@@ -18,7 +18,7 @@ class Game extends Component {
     this.state = {
       data: [],
       randomQuestion: {},
-      activeCategory: 'warm-up',
+      activeCategory: 'desert-birds',
       isVariantSelected: false,
       selectedVariantId: null,
       isAnswer: false,
@@ -67,6 +67,8 @@ class Game extends Component {
       this.player.current.audio.current.pause();
       this.player.current.audio.current.currentTime = 0;
       this.correctAnswerPlayer.current.audio.current.play();
+
+      console.log(randomQuestion.name);
     } else {
       wrongAnswersId.push(id);
       this.wrongAnswerPlayer.current.audio.current.play();
@@ -102,7 +104,7 @@ class Game extends Component {
 
     if (currentLevel === 5) {
       this.setState({
-        activeCategory: 'warm-up',
+        activeCategory: 'desert-birds',
         isFinished: true,
       });
 
@@ -130,7 +132,7 @@ class Game extends Component {
     this.setState((state) => ({
       data: birdsData[0],
       randomQuestion: birdsData[0][getRandomBird(birdsData[0].length)],
-      activeCategory: 'warm-up',
+      activeCategory: 'desert-birds',
       isVariantSelected: false,
       selectedVariantId: null,
       isAnswer: false,
@@ -154,7 +156,6 @@ class Game extends Component {
       wrongAnswersId,
       correctAnswersId,
       score,
-      point,
       isFinished,
     } = this.state;
 
@@ -172,9 +173,16 @@ class Game extends Component {
           {isFinished ? (
             <div className="game__over">
               <h1 className="game__congrats">Поздравляем!</h1>
+
               <p>
-                Вы прошли викторину и набрали <span>{score}</span> из
-                <span> 30</span> возможных баллов.
+                {score === 30 ? (
+                  'Игра закончена'
+                ) : (
+                  <span>
+                    Вы прошли викторину и набрали <span>{score}</span> из
+                    <span> 30</span> возможных баллов.
+                  </span>
+                )}
               </p>
 
               <hr className="game__over-hr" />
@@ -183,7 +191,7 @@ class Game extends Component {
                 className="button button--green button--over"
                 onClick={() => this.handleReset()}
               >
-                Попробовать еще раз!
+                {score === 30 ? 'Новая Игра' : 'Попробовать еще раз!'}
               </button>
             </div>
           ) : (
