@@ -1,0 +1,124 @@
+.game {
+  min-height: 100vh;
+  background-color: #222;
+
+  &__container {
+    max-width: 114rem;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1200px) {
+      max-width: 96rem;
+    }
+
+    @media only screen and (max-width: 992px) {
+      max-width: 72rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      max-width: 54rem;
+    }
+
+    @media only screen and (max-width: 540px) {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
+  }
+
+  &__guestion {
+    margin-bottom: 2.4rem;
+  }
+
+  &__body {
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.4rem;
+
+      @media only screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+
+      &-col {
+        flex: 0 0 48.5%;
+
+        @media only screen and (max-width: 768px) {
+          flex: 0 0 100%;
+
+          &:first-child {
+            margin-bottom: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding-bottom: 3rem;
+  }
+
+  &__over {
+    padding: 5.5rem 3rem 7rem;
+    background-color: #303030;
+    border-radius: 5px;
+
+    @media only screen and (max-width: 540px) {
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    p {
+      color: #fff;
+      font-weight: 300;
+      font-size: 1.8rem;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+        font-size: 2.1rem;
+      }
+    }
+
+    &-hr {
+      display: inline-block;
+      width: 100%;
+      margin: 2.5rem 0 5rem;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+      @media only screen and (max-width: 540px) {
+        margin: 2rem 0 4rem;
+      }
+
+      @media only screen and (max-width: 360px) {
+        margin: 2rem 0 3rem;
+      }
+    }
+  }
+
+  &__congrats {
+    margin-bottom: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 6.4rem;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 5.4rem;
+    }
+
+    @media only screen and (max-width: 540px) {
+      font-size: 4.8rem;
+    }
+
+    @media only screen and (max-width: 440px) {
+      font-size: 3.6rem;
+    }
+
+    @media only screen and (max-width: 360px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__audios {
+    display: none;
+  }
+}
